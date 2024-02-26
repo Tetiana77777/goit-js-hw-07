@@ -24,23 +24,25 @@ const createBoxes = amount => {
 btnCreate.addEventListener('click', () => {
     console.log(inputNum.value);
     
-  if (
-    Number(inputNum.value.trim()) > Number(inputNum.max) ||
-    Number(inputNum.value.trim()) < Number(inputNum.min)
-  ) {
-    alert('Please enter number from 1 to 100');
-  } else {
-      let boxesToAdd = createBoxes(inputNum.value.trim());
-      boxes.append(...boxesToAdd);
-  }
-  inputNum.value = '';
+    if (
+        Number(inputNum.value.trim()) > Number(inputNum.max) ||
+        Number(inputNum.value.trim()) < Number(inputNum.min)
+    ) {
+        alert('Please enter number from 1 to 100');
+    } else { boxes.innerHTML = '';
+        let boxesToAdd = createBoxes(inputNum.value.trim());
+        boxes.append(...boxesToAdd);
+      
+    }
+    inputNum.value = '';
+   
 });
 
 btnDestroy.addEventListener('click', destroyBoxes);
 
 function destroyBoxes() {
-  inputNum.value = '';
-  boxes.innerHTML = '';
+    inputNum.value = '';
+    boxes.innerHTML = '';
 }
 
 
