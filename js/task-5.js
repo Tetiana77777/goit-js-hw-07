@@ -4,13 +4,20 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const textColor = document.querySelector(".color");
-const btn = document.querySelector(".change-color");
-const body = document.querySelector("body");
+const textColor = document.querySelector('.color');
+const btn = document.querySelector('.change-color');
+const body = document.querySelector('body');
 
 btn.addEventListener('click', handleClick);
 function handleClick() {
-    const color = getRandomHexColor();
-    textColor.textContent = body.style.backgroundColor = color;
+  const color = getRandomHexColor();
+  textColor.textContent = body.style.backgroundColor = color;
 }
 
+//Правильный вариант МЕНТОР прислал
+
+// function handleClick() {
+//   const color = getRandomHexColor();
+//   body.style.backgroundColor = color;
+//   textColor.textContent = color;
+// }
